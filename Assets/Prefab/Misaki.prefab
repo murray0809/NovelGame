@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6859074241241178683}
   - component: {fileID: 7531390308327886727}
+  - component: {fileID: 4176259420846910911}
   m_Layer: 5
   m_Name: Misaki
   m_TagString: Character2
@@ -44,12 +45,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6859074241241178680}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65a9b1a1de0ae4c46bc7e343127aa901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 6859074241370654841}
+  novelGameManager: {fileID: 0}
+--- !u!114 &4176259420846910911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6859074241241178680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908df9cf1932b477496c542b1b888a07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 6859074241370654841}
+  novelGameManager: {fileID: 0}
 --- !u!1 &6859074241370654847
 GameObject:
   m_ObjectHideFlags: 0

@@ -72,7 +72,7 @@ public class LoadText : MonoBehaviour
             }
             else if(i == 1)
             {
-                face = int.Parse(textWords[page, i]);
+                face = int.Parse(textWords[page, 1]);
             }
             else
             {
