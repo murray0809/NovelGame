@@ -12,6 +12,7 @@ public class KohakuFace : MonoBehaviour
     [SerializeField] GameObject novelGameManager;
     LoadText loadText;
     CharacterName characterName;
+    CharacterPosition characterPosition;
 
     string nowTalk;
 
@@ -20,9 +21,10 @@ public class KohakuFace : MonoBehaviour
         novelGameManager = GameObject.FindGameObjectWithTag("NovelGameManager");
         loadText = novelGameManager.GetComponent<LoadText>();
         characterName = novelGameManager.GetComponent<CharacterName>();
+        characterPosition = novelGameManager.GetComponent<CharacterPosition>();
     }
 
-    
+
     void Update()
     {
         nowTalk = characterName.CharaName;
@@ -31,46 +33,92 @@ public class KohakuFace : MonoBehaviour
 
         if (nowTalk == "コハク")
         {
-            character.color = new Color(1f, 1f, 1f);
+            //character.color = new Color(1f, 1f, 1f);
 
             switch (facial)
             {
                 case 1:
-                    character.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/01");
+                    if (loadText.Position == 1)
+                    {
+                        characterPosition.Character1Image.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/01");
+                    }
+                    else if (loadText.Position == 2)
+                    {
+                        characterPosition.Character2Image.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/01");
+                    }
 
                     break;
 
                 case 2:
 
-                    character.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/02");
+                    if (loadText.Position == 1)
+                    {
+                        characterPosition.Character1Image.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/02");
+                    }
+                    else if (loadText.Position == 2)
+                    {
+                        characterPosition.Character2Image.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/02");
+                    }
 
                     break;
 
                 case 3:
-                    character.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/03");
+
+                    if (loadText.Position == 1)
+                    {
+                        characterPosition.Character1Image.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/03");
+                    }
+                    else if (loadText.Position == 2)
+                    {
+                        characterPosition.Character2Image.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/03");
+                    }
 
                     break;
 
                 case 4:
-                    character.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/04");
+
+                    if (loadText.Position == 1)
+                    {
+                        characterPosition.Character1Image.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/04");
+                    }
+                    else if (loadText.Position == 2)
+                    {
+                        characterPosition.Character2Image.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/04");
+                    }
 
                     break;
 
                 case 5:
-                    character.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/05");
+
+                    if (loadText.Position == 1)
+                    {
+                        characterPosition.Character1Image.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/05");
+                    }
+                    else if (loadText.Position == 2)
+                    {
+                        characterPosition.Character2Image.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/05");
+                    }
 
                     break;
 
                 case 6:
-                    character.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/06");
+
+                    if (loadText.Position == 1)
+                    {
+                        characterPosition.Character1Image.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/06");
+                    }
+                    else if (loadText.Position == 2)
+                    {
+                        characterPosition.Character2Image.sprite = Resources.Load<Sprite>("UnityChan/Kohaku/06");
+                    }
 
                     break;
             }
         }
         else
         {
-            character.color = new Color(125f / 255f, 125f / 255f, 125f / 255f);
+            //character.color = new Color(125f / 255f, 125f / 255f, 125f / 255f);
         }
-        
+
     }
 }

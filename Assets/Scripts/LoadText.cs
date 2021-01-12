@@ -4,12 +4,12 @@ using UnityEngine.UI;
 
 public class LoadText : MonoBehaviour
 {
-    public string[] textMessage; //テキストの加工前の一行を入れる変数
-    public string[,] textWords; //テキストの複数列を入れる2次元は配列 
+    public string[] textMessage; 
+    public string[,] textWords;
 
-    private int rowLength; //テキスト内の行数を取得する変数
+    private int rowLength; //行数
     public int RowLength { get { return rowLength; } }
-    private int columnLength; //テキスト内の列数を取得する変数
+    private int columnLength; //列数
 
     int page = 0;
 
@@ -22,6 +22,9 @@ public class LoadText : MonoBehaviour
     private string messageText;
     public string MessageText { get { return messageText; } }
 
+    private int position;
+    public int Position { get { return position; } }
+
     MessageText messageTextScript;
 
     private bool reading;
@@ -29,18 +32,15 @@ public class LoadText : MonoBehaviour
     bool flag = false;
     private void Start()
     {
-        TextAsset textasset = new TextAsset(); //テキストファイルのデータを取得するインスタンスを作成
-        textasset = Resources.Load("TextData", typeof(TextAsset)) as TextAsset; //Resourcesフォルダから対象テキストを取得
-        string TextLines = textasset.text; //テキスト全体をstring型で入れる変数を用意して入れる
+        TextAsset textasset = new TextAsset();
+        textasset = Resources.Load("TextData", typeof(TextAsset)) as TextAsset;
+        string TextLines = textasset.text;
 
-        //Splitで一行づつを代入した1次配列を作成
-        textMessage = TextLines.Split('\n'); //
+        textMessage = TextLines.Split('\n');
 
-        //行数と列数を取得
         columnLength = textMessage[0].Split('\t').Length;
         rowLength = textMessage.Length;
 
-        //2次配列を定義
         textWords = new string[rowLength, columnLength];
 
         messageTextScript = GetComponent<MessageText>();
@@ -60,9 +60,9 @@ public class LoadText : MonoBehaviour
 
     void PageCount(int count)
     {
-        string[] tempWords = textMessage[count].Split('\t'); //textMessageをカンマごとに分けたものを一時的にtempWordsに代入
+        string[] tempWords = textMessage[count].Split('\t');
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             textWords[page, i] = tempWords[i];
 
@@ -74,10 +74,14 @@ public class LoadText : MonoBehaviour
             {
                 face = int.Parse(textWords[page, 1]);
             }
-            else
+            else if(i == 2)
             {
                 messageText = textWords[page, 2];
-            }   
+            }
+            else
+            {
+                position = int.Parse(textWords[page, 3]);
+            }
         }
 
         page++;

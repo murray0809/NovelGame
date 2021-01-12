@@ -13,6 +13,7 @@ public class MisakiFace : MonoBehaviour
     [SerializeField] GameObject novelGameManager;
     LoadText loadText;
     CharacterName characterName;
+    CharacterPosition characterPosition;
 
     string nowTalk;
 
@@ -21,6 +22,7 @@ public class MisakiFace : MonoBehaviour
         novelGameManager = GameObject.FindGameObjectWithTag("NovelGameManager");
         loadText = novelGameManager.GetComponent<LoadText>();
         characterName = novelGameManager.GetComponent<CharacterName>();
+        characterPosition = novelGameManager.GetComponent<CharacterPosition>();
     }
 
     void Update()
@@ -31,50 +33,92 @@ public class MisakiFace : MonoBehaviour
 
         if (nowTalk == "ミサキ")
         {
-            character.color = new Color(1f, 1f, 1f);
+            //character.color = new Color(1f, 1f, 1f);
 
             switch (facial)
             {
                 case 1:
 
-                    character.sprite = Resources.Load<Sprite>("UnityChan/Misaki/01");
-
+                    if (loadText.Position == 1)
+                    {
+                        characterPosition.Character1Image.sprite = Resources.Load<Sprite>("UnityChan/Misaki/01");
+                    }
+                    else if (loadText.Position == 2)
+                    {
+                        characterPosition.Character2Image.sprite = Resources.Load<Sprite>("UnityChan/Misaki/01");
+                    }
+                    
                     break;
 
                 case 2:
 
-                    character.sprite = Resources.Load<Sprite>("UnityChan/Misaki/02");
+                    if (loadText.Position == 1)
+                    {
+                        characterPosition.Character1Image.sprite = Resources.Load<Sprite>("UnityChan/Misaki/02");
+                    }
+                    else if (loadText.Position == 2)
+                    {
+                        characterPosition.Character2Image.sprite = Resources.Load<Sprite>("UnityChan/Misaki/02");
+                    }
 
                     break;
 
                 case 3:
 
-                    character.sprite = Resources.Load<Sprite>("UnityChan/Misaki/03");
+                    if (loadText.Position == 1)
+                    {
+                        characterPosition.Character1Image.sprite = Resources.Load<Sprite>("UnityChan/Misaki/03");
+                    }
+                    else if (loadText.Position == 2)
+                    {
+                        characterPosition.Character2Image.sprite = Resources.Load<Sprite>("UnityChan/Misaki/03");
+                    }
 
                     break;
 
                 case 4:
 
-                    character.sprite = Resources.Load<Sprite>("UnityChan/Misaki/04");
+                    if(loadText.Position == 1)
+                    {
+                        characterPosition.Character1Image.sprite = Resources.Load<Sprite>("UnityChan/Misaki/04");
+                    }
+                    else if (loadText.Position == 2)
+                    {
+                        characterPosition.Character2Image.sprite = Resources.Load<Sprite>("UnityChan/Misaki/04");
+                    }
 
                     break;
 
                 case 5:
 
-                    character.sprite = Resources.Load<Sprite>("UnityChan/Misaki/05");
+                    if (loadText.Position == 1)
+                    {
+                        characterPosition.Character1Image.sprite = Resources.Load<Sprite>("UnityChan/Misaki/05");
+                    }
+                    else if (loadText.Position == 2)
+                    {
+                        characterPosition.Character2Image.sprite = Resources.Load<Sprite>("UnityChan/Misaki/05");
+                    }
 
                     break;
 
                 case 6:
 
-                    character.sprite = Resources.Load<Sprite>("UnityChan/Misaki/06");
+                    if (loadText.Position == 1)
+                    {
+                        characterPosition.Character1Image.sprite = Resources.Load<Sprite>("UnityChan/Misaki/06");
+                    }
+                    else if (loadText.Position == 2)
+                    {
+                        characterPosition.Character2Image.sprite = Resources.Load<Sprite>("UnityChan/Misaki/06");
+                    }
 
                     break;
             }
         }
         else
         {
-            character.color = new Color(125f / 255f, 125f / 255f, 125f / 255f);
+            //character.color = new Color(125f / 255f, 125f / 255f, 125f / 255f);
         }
     }
 }
