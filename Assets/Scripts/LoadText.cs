@@ -12,6 +12,7 @@ public class LoadText : MonoBehaviour
     private int columnLength; //列数
 
     int page = 0;
+    public int Page { get { return page; } set { page = value; } }
 
     private string characterName;
     public string CharacterName { get { return characterName; } }
@@ -25,11 +26,15 @@ public class LoadText : MonoBehaviour
     private int position;
     public int Position { get { return position; } }
 
+    private int fadeIn;
+    public int FadeIn { get { return fadeIn; } }
+
     MessageText messageTextScript;
 
     private bool reading;
 
     bool flag = false;
+
     private void Start()
     {
         TextAsset textasset = new TextAsset();
@@ -54,15 +59,16 @@ public class LoadText : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && page < rowLength && !reading)
         {
+            //page++;
             PageCount(page);
         }
     }
 
-    void PageCount(int count)
+    public void PageCount(int count)
     {
         string[] tempWords = textMessage[count].Split('\t');
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 5; i++)
         {
             textWords[page, i] = tempWords[i];
 
@@ -78,12 +84,14 @@ public class LoadText : MonoBehaviour
             {
                 messageText = textWords[page, 2];
             }
-            else
+            else if(i == 3)
             {
                 position = int.Parse(textWords[page, 3]);
             }
+            else
+            {
+                fadeIn = int.Parse(textWords[page, 4]);
+            }
         }
-
-        page++;
     }
 }

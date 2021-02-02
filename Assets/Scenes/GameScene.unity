@@ -564,6 +564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   message: {fileID: 788159213}
   speed: 10
+  fadeTarget: {fileID: 592000170}
 --- !u!114 &758086449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,6 +579,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fade: {fileID: 592000170}
   m_mode: 0
+  novelGameManager: {fileID: 0}
+  fadeTarget: {fileID: 592000170}
 --- !u!114 &758086450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,6 +736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   message: {fileID: 788159213}
   speed: 10
+  fadeTarget: {fileID: 0}
 --- !u!114 &788159217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,6 +1247,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fade: {fileID: 592000170}
   m_mode: 0
+  novelGameManager: {fileID: 0}
+  fadeTarget: {fileID: 0}
 --- !u!1 &1911021168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,6 +1397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   message: {fileID: 2116455867}
   speed: 10
+  fadeTarget: {fileID: 0}
 --- !u!114 &2116455866
 MonoBehaviour:
   m_ObjectHideFlags: 0

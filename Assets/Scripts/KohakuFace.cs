@@ -33,8 +33,6 @@ public class KohakuFace : MonoBehaviour
 
         if (nowTalk == "コハク")
         {
-            //character.color = new Color(1f, 1f, 1f);
-
             switch (facial)
             {
                 case 1:
